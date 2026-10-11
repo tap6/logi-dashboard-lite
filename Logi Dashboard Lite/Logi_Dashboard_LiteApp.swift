@@ -1,25 +1,14 @@
-import SwiftUI
+import AppKit
 
 @main
-struct LogiDashboardLiteApp: App {
-    @State private var store: DeviceStore
-
-    init() {
-        let store = DeviceStore()
-        _store = State(initialValue: store)
-        store.start()
-    }
-
-    var body: some Scene {
-        MenuBarExtra {
-            DevicePopoverView(store: store)
-        } label: {
-            MenuBarLabel(store: store)
-        }
-        .menuBarExtraStyle(.window)
-
-        Settings {
-            SettingsView()
+struct LogiDashboardLiteApp {
+    static func main() {
+        let app = NSApplication.shared
+        app.setActivationPolicy(.accessory)
+        let delegate = MenuBarAppDelegate()
+        app.delegate = delegate
+        withExtendedLifetime(delegate) {
+            app.run()
         }
     }
 }

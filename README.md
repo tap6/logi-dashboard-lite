@@ -85,9 +85,9 @@
 
 ## 下载与安装
 
-1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.1-macOS-universal.zip`。
+1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.2-macOS-universal.zip`。
 2. 解压，将 `Logi Dashboard Lite.app` 放入“应用程序”文件夹。
-3. 启动后点击顶部菜单栏的鼠标图标；应用默认不弹出主窗口。在面板中打开仪表盘，或右键菜单栏图标进入设置。
+3. 启动后点击顶部菜单栏的鼠标图标；应用默认不弹出主窗口。左键打开或关闭鼠标面板，右键只显示菜单（Control＋左键也可）。在面板中打开仪表盘，或从右键菜单进入设置。
 
 **系统要求：macOS 14.0 或更高版本。** 安装包包含 `arm64` 和 `x86_64`，支持 Sonoma 14、Sequoia 15、Tahoe 26 及更新系统。macOS 14 的最低版本编译与二进制检查已通过，但尚未在 macOS 14 实机验证；截图采集于较新系统，外观可能不同。
 

@@ -3,7 +3,6 @@ import SwiftUI
 
 struct MenuBarLabel: View {
     var store: DeviceStore
-    @Environment(\.openSettings) private var openSettings
     @AppStorage(AppPreference.showMenuBarPercent) private var showPercent = false
     @AppStorage(AppPreference.lowBatteryThreshold) private var lowThreshold = 15.0
 
@@ -33,8 +32,7 @@ struct MenuBarLabel: View {
         .opacity(device?.link == .online ? 1 : 0.45)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityText(device: device, threshold: threshold))
-        .background(StatusItemMenuAnchor())
-        .onAppear(perform: installContextMenu)
+        .fixedSize()
     }
 
     private func percentText(device: TrackedDevice?, threshold: Int) -> String? {
@@ -61,34 +59,4 @@ struct MenuBarLabel: View {
         return L10n.menuAccessibility(name: device.name, link: device.link.label)
     }
 
-    private func installContextMenu() {
-        MenuBarContextMenu.shared.openAbout = {
-            store.showsAbout = true
-            DashboardWindowController.shared.show(store: store)
-        }
-        MenuBarContextMenu.shared.openSettings = {
-            openSettings()
-            NSApp.activate()
-        }
-        MenuBarContextMenu.shared.install()
-    }
-}
-
-private struct StatusItemMenuAnchor: NSViewRepresentable {
-    func makeNSView(context: Context) -> NSView {
-        let view = NSView(frame: .zero)
-        scheduleInstall(from: view)
-        return view
-    }
-
-    func updateNSView(_ nsView: NSView, context: Context) {
-        scheduleInstall(from: nsView)
-    }
-
-    private func scheduleInstall(from view: NSView) {
-        DispatchQueue.main.async {
-            _ = view
-            MenuBarContextMenu.shared.install()
-        }
-    }
 }

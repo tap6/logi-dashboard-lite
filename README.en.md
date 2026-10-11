@@ -85,9 +85,9 @@ To report compatibility, open an Issue with **model, connection mode, macOS vers
 
 ## Download and install
 
-1. Download `Logi-Dashboard-Lite-1.0.1-macOS-universal.zip` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
+1. Download `Logi-Dashboard-Lite-1.0.2-macOS-universal.zip` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
 2. Extract it and move `Logi Dashboard Lite.app` to Applications.
-3. Launch it and click the mouse icon in the top menu bar. The main window does not open automatically. Open the dashboard from the panel, or right-click the menu bar icon for settings.
+3. Launch it and click the mouse icon in the top menu bar. The main window does not open automatically. Left-click to toggle the mouse panel; right-click (or Control-click) opens only the menu. Open the dashboard from the panel, or use the menu for settings.
 
 **Requires macOS 14.0 or later.** The archive contains both `arm64` and `x86_64`; it targets Sonoma 14, Sequoia 15, Tahoe 26 and later. Deployment-target compilation and binary checks passed for macOS 14, but runtime testing on macOS 14 hardware is still pending. Screenshots were captured on a newer system, so appearance may differ.
 

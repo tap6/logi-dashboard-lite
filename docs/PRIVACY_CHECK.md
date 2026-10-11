@@ -1,8 +1,8 @@
 # Publication privacy review / 发布隐私检查
 
-Reviewed on 2026-10-11 for v1.0.0 and rechecked for v1.0.1. This review covers the files intended for the public repository and the compiled release archive; it is not a guarantee against every possible sensitive value.
+Reviewed on 2026-10-11 for v1.0.0 and rechecked for v1.0.1 and v1.0.2. This review covers the files intended for the public repository and the compiled release archive; it is not a guarantee against every possible sensitive value.
 
-2026-10-11，对 v1.0.0 及 v1.0.1 公开文件和编译安装包进行检查。此检查不等同于保证任何可能的敏感信息都能被识别。
+2026-10-11，对 v1.0.0、v1.0.1 及 v1.0.2 公开文件和编译安装包进行检查。此检查不等同于保证任何可能的敏感信息都能被识别。
 
 ## Changes made before publication
 
