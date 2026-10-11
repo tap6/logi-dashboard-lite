@@ -17,7 +17,10 @@ jobs:
       - name: Verify HID++ decoding fixtures
         run: bash scripts/test.sh
       - name: Build universal release
-        run: bash scripts/build-release.sh
+        run: |
+          task_source="$(mktemp -d /tmp/logi-dashboard-source.XXXXXX)"
+          cp -R "$GITHUB_WORKSPACE/." "$task_source/"
+          LOGI_BUILD_DIR="/tmp/logi-dashboard-build" LOGI_DIST_DIR="$GITHUB_WORKSPACE/dist" bash "$task_source/scripts/build-release.sh"
       - name: Upload compiled archive
         uses: actions/upload-artifact@v4
         with:
