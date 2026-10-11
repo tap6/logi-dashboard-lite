@@ -1,0 +1,23 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+dist/
+*.xcarchive
+*.dSYM/
+*.xcresult
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.provisionprofile
+.codex/
+.agents/
+AGENTS.md
+__pycache__/
+*.pyc
+
+# Local design explorations are not part of the distributed app.
+Design/AppIcon/LogiDashboardLite-source.png
+Design/AppIcon/menu-symbol-glass-preview.*

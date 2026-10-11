@@ -1,0 +1,33 @@
+name: Update Stars history
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stars-history
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'tap6/logi-dashboard-lite'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Record current total Stars
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/update-stars.py
+      - name: Commit chart and data
+        run: |
+          git add docs/stars-history.csv docs/stars-history.svg docs/stars-history.md
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "docs: update daily Stars history"
+          git pull --rebase origin main
+          git push origin HEAD:main
