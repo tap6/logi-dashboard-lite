@@ -21,12 +21,5 @@ struct LogiDashboardLiteApp: App {
         Settings {
             SettingsView()
         }
-
-        Window(Text(L10n.windowDashboard), id: "dashboard") {
-            DashboardView(store: store)
-        }
-        .defaultSize(width: 740, height: 540)
-        .windowResizability(.contentMinSize)
-        .defaultLaunchBehavior(.suppressed)
     }
 }

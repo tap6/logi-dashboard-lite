@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/tap6/logi-dashboard-lite/releases/latest"><img src="https://img.shields.io/github/v/release/tap6/logi-dashboard-lite?style=flat-square" alt="最新版本"></a>
-  <img src="https://img.shields.io/badge/macOS-26.4%2B-333333?logo=apple&style=flat-square" alt="macOS 26.4 及以上">
+  <img src="https://img.shields.io/badge/macOS-14.0%2B-333333?logo=apple&style=flat-square" alt="macOS 14.0 及以上">
   <img src="https://img.shields.io/badge/架构-Apple%20Silicon%20%2B%20Intel-0A84FF?style=flat-square" alt="Apple Silicon 和 Intel">
   <a href="https://github.com/tap6/logi-dashboard-lite/actions/workflows/build.yml"><img src="https://github.com/tap6/logi-dashboard-lite/actions/workflows/build.yml/badge.svg" alt="构建检查"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tap6/logi-dashboard-lite?style=flat-square" alt="GPL-3.0 许可证"></a>
@@ -85,11 +85,13 @@
 
 ## 下载与安装
 
-1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.0-macOS-universal.zip`。
+1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.1-macOS-universal.zip`。
 2. 解压，将 `Logi Dashboard Lite.app` 放入“应用程序”文件夹。
 3. 启动后点击顶部菜单栏的鼠标图标；应用默认不弹出主窗口。在面板中打开仪表盘，或右键菜单栏图标进入设置。
 
-**系统要求：macOS 26.4 或更高版本。** 安装包包含 `arm64` 和 `x86_64`，但实际运行仍需满足系统版本要求。
+**系统要求：macOS 14.0 或更高版本。** 安装包包含 `arm64` 和 `x86_64`，支持 Sonoma 14、Sequoia 15、Tahoe 26 及更新系统。macOS 14 的最低版本编译与二进制检查已通过，但尚未在 macOS 14 实机验证；截图采集于较新系统，外观可能不同。
+
+[最低版本选择与验证范围](docs/COMPATIBILITY.md)。
 
 当前 Release 使用 **ad-hoc 临时签名，未做 Developer ID 签名或 Apple 公证**。从互联网下载后，macOS 可能阻止首次打开。如果你决定运行，请先核对下载来源和 `SHA256SUMS.txt`，再按 [Apple 的官方说明](https://support.apple.com/102445)，在“系统设置 → 隐私与安全性”中对这个应用选择“仍要打开”。
 

@@ -17,6 +17,15 @@ def main():
     architectures = subprocess.check_output(["lipo", "-archs", str(executable)], text=True).split()
     if set(architectures) != {"arm64", "x86_64"}:
         raise SystemExit("Release is not a universal arm64/x86_64 build")
+    # Check the actual loader requirement for each CPU, not just Info.plist.
+    declared_minimum = info["LSMinimumSystemVersion"]
+    for architecture in architectures:
+        build_info = subprocess.check_output(
+            ["xcrun", "vtool", "-arch", architecture, "-show-build", str(executable)], text=True
+        )
+        minimums = re.findall(r"^\s*minos\s+(\S+)", build_info, re.MULTILINE)
+        if minimums != [declared_minimum]:
+            raise SystemExit(f"{architecture} loader minimum does not match Info.plist")
     subprocess.run(["codesign", "--verify", "--deep", "--strict", str(app)], check=True)
     signature = subprocess.run(["codesign", "-dvv", str(app)], capture_output=True, text=True, check=True).stderr
     if "Signature=adhoc" not in signature or "TeamIdentifier=not set" not in signature:

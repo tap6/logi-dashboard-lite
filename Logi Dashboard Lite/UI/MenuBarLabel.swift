@@ -3,7 +3,7 @@ import SwiftUI
 
 struct MenuBarLabel: View {
     var store: DeviceStore
-    @Environment(\.openWindow) private var openWindow
+    @Environment(\.openSettings) private var openSettings
     @AppStorage(AppPreference.showMenuBarPercent) private var showPercent = false
     @AppStorage(AppPreference.lowBatteryThreshold) private var lowThreshold = 15.0
 
@@ -64,7 +64,10 @@ struct MenuBarLabel: View {
     private func installContextMenu() {
         MenuBarContextMenu.shared.openAbout = {
             store.showsAbout = true
-            openWindow(id: "dashboard")
+            DashboardWindowController.shared.show(store: store)
+        }
+        MenuBarContextMenu.shared.openSettings = {
+            openSettings()
             NSApp.activate()
         }
         MenuBarContextMenu.shared.install()

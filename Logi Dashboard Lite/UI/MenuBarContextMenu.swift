@@ -6,6 +6,7 @@ final class MenuBarContextMenu: NSObject {
     static let shared = MenuBarContextMenu()
 
     var openAbout: () -> Void = {}
+    var openSettings: () -> Void = {}
 
     private var monitor: Any?
     private var isShowing = false
@@ -141,8 +142,7 @@ final class MenuBarContextMenu: NSObject {
     }
 
     @objc private func showSettings() {
-        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-        NSApp.activate()
+        openSettings()
     }
 
     @objc private func checkForUpdates() {

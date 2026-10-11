@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/tap6/logi-dashboard-lite/releases/latest"><img src="https://img.shields.io/github/v/release/tap6/logi-dashboard-lite?style=flat-square" alt="Latest release"></a>
-  <img src="https://img.shields.io/badge/macOS-26.4%2B-333333?logo=apple&style=flat-square" alt="macOS 26.4 or later">
+  <img src="https://img.shields.io/badge/macOS-14.0%2B-333333?logo=apple&style=flat-square" alt="macOS 14.0 or later">
   <img src="https://img.shields.io/badge/architecture-Apple%20Silicon%20%2B%20Intel-0A84FF?style=flat-square" alt="Apple Silicon and Intel">
   <a href="https://github.com/tap6/logi-dashboard-lite/actions/workflows/build.yml"><img src="https://github.com/tap6/logi-dashboard-lite/actions/workflows/build.yml/badge.svg" alt="Build checks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/tap6/logi-dashboard-lite?style=flat-square" alt="GPL-3.0 license"></a>
@@ -85,11 +85,13 @@ To report compatibility, open an Issue with **model, connection mode, macOS vers
 
 ## Download and install
 
-1. Download `Logi-Dashboard-Lite-1.0.0-macOS-universal.zip` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
+1. Download `Logi-Dashboard-Lite-1.0.1-macOS-universal.zip` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
 2. Extract it and move `Logi Dashboard Lite.app` to Applications.
 3. Launch it and click the mouse icon in the top menu bar. The main window does not open automatically. Open the dashboard from the panel, or right-click the menu bar icon for settings.
 
-**Requires macOS 26.4 or later.** The archive contains both `arm64` and `x86_64`; the operating-system requirement still applies.
+**Requires macOS 14.0 or later.** The archive contains both `arm64` and `x86_64`; it targets Sonoma 14, Sequoia 15, Tahoe 26 and later. Deployment-target compilation and binary checks passed for macOS 14, but runtime testing on macOS 14 hardware is still pending. Screenshots were captured on a newer system, so appearance may differ.
+
+[Minimum OS rationale and verification scope](docs/COMPATIBILITY.md).
 
 This release is **ad-hoc signed, without Developer ID signing or Apple notarization**. macOS may block its first launch after downloading. If you choose to run it, verify the download source and `SHA256SUMS.txt`, then follow [Apple's official instructions](https://support.apple.com/102445) to use Open Anyway for this app in System Settings → Privacy & Security.
 

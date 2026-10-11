@@ -3,7 +3,6 @@ import SwiftUI
 
 struct DevicePopoverView: View {
     var store: DeviceStore
-    @Environment(\.openWindow) private var openWindow
     @AppStorage(AppPreference.lowBatteryThreshold) private var lowThreshold = 15.0
 
     var body: some View {
@@ -22,8 +21,7 @@ struct DevicePopoverView: View {
     }
 
     private func openDashboard() {
-        openWindow(id: "dashboard")
-        NSApp.activate()
+        DashboardWindowController.shared.show(store: store)
     }
 
     private var showsProfileSwitcher: Bool {
