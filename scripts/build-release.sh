@@ -24,5 +24,5 @@ codesign --verify --deep --strict "$task_app"
 lipo -archs "$task_app/Contents/MacOS/Logi Dashboard Lite"
 ditto -c -k --keepParent --norsrc --noextattr "$task_app" "$task_dist/$task_archive"
 python3 "$task_root/scripts/check-release.py" "$task_app" "$task_dist/$task_archive"
-(cd "$task_dist" && shasum -a 256 "$task_archive" > SHA256SUMS.txt)
+bash "$task_root/scripts/build-dmg.sh" "$task_app"
 printf 'Release archive: %s\n' "$task_dist/$task_archive"

@@ -85,9 +85,11 @@
 
 ## 下载与安装
 
-1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.2-macOS-universal.zip`。
-2. 解压，将 `Logi Dashboard Lite.app` 放入“应用程序”文件夹。
+1. 从 [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest) 下载 `Logi-Dashboard-Lite-1.0.2-macOS-universal.dmg`。
+2. 打开 DMG，把左侧的 `Logi Dashboard Lite` 图标拖到右侧的 Applications（“应用程序”）文件夹，复制完成后推出磁盘映像。
 3. 启动后点击顶部菜单栏的鼠标图标；应用默认不弹出主窗口。左键打开或关闭鼠标面板，右键只显示菜单（Control＋左键也可）。在面板中打开仪表盘，或从右键菜单进入设置。
+
+也提供 ZIP：解压后将应用放入“应用程序”文件夹。
 
 **系统要求：macOS 14.0 或更高版本。** 安装包包含 `arm64` 和 `x86_64`，支持 Sonoma 14、Sequoia 15、Tahoe 26 及更新系统。macOS 14 的最低版本编译与二进制检查已通过，但尚未在 macOS 14 实机验证；截图采集于较新系统，外观可能不同。
 
@@ -115,7 +117,7 @@
 
 ## 从源码构建
 
-需要 **Xcode 26.4 或更新版本**及相应 macOS SDK。本次发布在 Xcode 27.0 编译；项目无需第三方依赖。
+需要 **Xcode 26.4 或更新版本**及相应 macOS SDK。本次发布在 Xcode 27.0 编译；应用本身无需第三方依赖；DMG 打包使用 Python 3.10+ 和 [dmgbuild](https://github.com/dmgbuild/dmgbuild)，脚本会将固定版本的打包工具安装到独立虚拟环境。
 
 ```bash
 git clone https://github.com/tap6/logi-dashboard-lite.git
@@ -124,7 +126,7 @@ bash scripts/test.sh
 bash scripts/build-release.sh
 ```
 
-生成的通用 ZIP 和校验文件位于 `dist/`。也可以直接打开 `Logi Dashboard Lite.xcodeproj`；本地开发签名团队由你自行选择。构建脚本生成临时签名版本，不自动公证或上传。
+生成的通用 DMG、ZIP 和校验文件位于 `dist/`。也可以直接打开 `Logi Dashboard Lite.xcodeproj`；本地开发签名团队由你自行选择。构建脚本生成临时签名版本，不自动公证或上传。
 
 `scripts/test.sh` 执行现有 HID++ 解码断言，覆盖报文、电量、设备类型、板载配置和 DPI 数据解析。GitHub Actions 会执行解析检查及通用构建；测试通过不等同于全部硬件兼容。
 

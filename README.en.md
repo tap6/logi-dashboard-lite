@@ -85,9 +85,11 @@ To report compatibility, open an Issue with **model, connection mode, macOS vers
 
 ## Download and install
 
-1. Download `Logi-Dashboard-Lite-1.0.2-macOS-universal.zip` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
-2. Extract it and move `Logi Dashboard Lite.app` to Applications.
+1. Download `Logi-Dashboard-Lite-1.0.2-macOS-universal.dmg` from [Releases](https://github.com/tap6/logi-dashboard-lite/releases/latest).
+2. Open the DMG and drag the `Logi Dashboard Lite` icon on the left to Applications on the right. Eject the disk image after copying.
 3. Launch it and click the mouse icon in the top menu bar. The main window does not open automatically. Left-click to toggle the mouse panel; right-click (or Control-click) opens only the menu. Open the dashboard from the panel, or use the menu for settings.
+
+A ZIP is also available: extract it and move the app to Applications.
 
 **Requires macOS 14.0 or later.** The archive contains both `arm64` and `x86_64`; it targets Sonoma 14, Sequoia 15, Tahoe 26 and later. Deployment-target compilation and binary checks passed for macOS 14, but runtime testing on macOS 14 hardware is still pending. Screenshots were captured on a newer system, so appearance may differ.
 
@@ -115,7 +117,7 @@ See the [publication privacy review](docs/PRIVACY_CHECK.md). The release script 
 
 ## Build from source
 
-Requires **Xcode 26.4 or later** and the corresponding macOS SDK. This release was compiled with Xcode 27.0. No third-party dependencies.
+Requires **Xcode 26.4 or later** and the corresponding macOS SDK. This release was compiled with Xcode 27.0. The app has no third-party dependencies. DMG packaging requires Python 3.10+ and [dmgbuild](https://github.com/dmgbuild/dmgbuild); the script installs pinned packaging tools in an isolated virtual environment.
 
 ```bash
 git clone https://github.com/tap6/logi-dashboard-lite.git
@@ -124,7 +126,7 @@ bash scripts/test.sh
 bash scripts/build-release.sh
 ```
 
-The universal ZIP and checksums are written to `dist/`. Alternatively, open `Logi Dashboard Lite.xcodeproj` and choose your own signing team for local development. The build script uses ad-hoc signing; it does not notarize or upload anything.
+The universal DMG, ZIP and checksums are written to `dist/`. Alternatively, open `Logi Dashboard Lite.xcodeproj` and choose your own signing team for local development. The build script uses ad-hoc signing; it does not notarize or upload anything.
 
 `scripts/test.sh` runs the existing HID++ decoding assertions for packets, battery, device types, onboard profiles and DPI. GitHub Actions runs these checks and builds the universal app. Passing tests does not imply compatibility with every device.
 
