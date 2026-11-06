@@ -17,10 +17,10 @@
 <text class="small" x="52" y="118.6" text-anchor="end">4</text>
 <line class="grid" x1="66" y1="82.0" x2="868" y2="82.0"/>
 <text class="small" x="52" y="86.0" text-anchor="end">5</text>
-<polyline points="66.0,245.0 98.1,245.0 130.2,245.0 162.2,245.0 194.3,245.0 226.4,245.0 258.5,245.0 290.6,245.0 322.6,245.0 354.7,245.0 386.8,245.0 418.9,245.0 451.0,245.0 483.0,245.0 515.1,245.0 547.2,245.0 579.3,245.0 611.4,245.0 643.4,245.0 675.5,245.0 707.6,245.0 739.7,245.0 771.8,245.0 803.8,245.0 835.9,245.0 868.0,245.0" fill="none" stroke="#10b981" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="66.0,245.0 96.8,245.0 127.7,245.0 158.5,245.0 189.4,245.0 220.2,245.0 251.1,245.0 281.9,245.0 312.8,245.0 343.6,245.0 374.5,245.0 405.3,245.0 436.2,245.0 467.0,245.0 497.8,245.0 528.7,245.0 559.5,245.0 590.4,245.0 621.2,245.0 652.1,245.0 682.9,245.0 713.8,245.0 744.6,245.0 775.5,245.0 806.3,245.0 837.2,245.0 868.0,245.0" fill="none" stroke="#10b981" stroke-width="3" stroke-linejoin="round"/>
 <circle cx="66.0" cy="245.0" r="5" fill="#10b981"/>
 <text class="small" x="66.0" y="268" text-anchor="middle">2026-10-11</text>
 <circle cx="868.0" cy="245.0" r="5" fill="#10b981"/>
-<text class="small" x="868.0" y="268" text-anchor="middle">2026-11-05</text>
+<text class="small" x="868.0" y="268" text-anchor="middle">2026-11-06</text>
 <text class="small" x="28" y="299">Recording started 2026-10-11. Historical values are not backfilled.</text>
 </svg>
